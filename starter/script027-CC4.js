@@ -17,6 +17,7 @@ Rappel: BMI = poids / taille^2 = poids / (taille * taille). (poids en kg and tai
 BONNE CHANCE 😀
 */
 
+/* Exercice en utilisant les classes */
 class person{
     name;
     weigth;

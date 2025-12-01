@@ -43,7 +43,7 @@ aurora.decrire();
 EXERCICE 1 : Ajoute une méthode calcAge à john qui calcule son âge
 (en soustrayant sa date de naissance de 2019), le retourne et le stocke dans une propriété age.
 */
-let john = {
+const john = {
     firstName: 'John',
     lastName: 'Smith',
     birthYear: 1992,

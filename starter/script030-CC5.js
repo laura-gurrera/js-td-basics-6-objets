@@ -46,7 +46,6 @@ BONNE CHANCE 😀
 //Bonus
 
 class Personne{
-
         nom;
         factures;
         pourboires=[];
@@ -64,56 +63,41 @@ class Personne{
             }
         };
 
-        calcMoyennePourboires(){
-            let total=0;
-            for(let i=0; i<this.pourboires.length; i++){
-                total+=this.pourboires[i]
-            }
-            this.moyennePourboires= total/this.pourboires.length;
-        }
+   
 
 }
 
 const john= new Personne('John',[124, 48, 268, 180, 42]);
+const mark=new Personne('Mark', [77, 375, 110, 45]);
 
-function calcPourboireJohn(){
-    for (let i=0; i<john.factures.length ; i++){
-        if (john.factures[i] < 50) {
-            john.pourboires.push(john.factures[i]*0.2);
+function calcPourboire(person){
+    for (let i=0; i<person.factures.length ; i++){
+        if (person.factures[i] < 50) {
+            person.pourboires.push(person.factures[i]*0.2);
 
-        } else if (john.factures[i] >= 50 && john.factures[i] < 200) {
-            john.pourboires.push(john.factures[i]*0.15);
+        } else if (person.factures[i] >= 50 && person.factures[i] < 200) {
+            person.pourboires.push(person.factures[i]*0.15);
 
         } else {
-            john.pourboires.push(john.factures[i]*0.1);
+            person.pourboires.push(person.factures[i]*0.1);
 
         }
     }
 }
 
-calcPourboireJohn(john.factures);
+function calcMoyennePourboires(){
+    let total=0;
+    for(let i=0; i<this.pourboires.length; i++){
+        total+=this.pourboires[i]
+    }
+    this.moyennePourboires= total/this.pourboires.length;
+}
+
+calcPourboire(john);
+calcPourboire(mark);
 console.log(john.pourboires);
 
 
-const mark=new Personne('Mark', [77, 375, 110, 45]);
-
-function calcPourboireMark(){
-    for (let i=0; i<mark.factures.length ; i++){
-        if (mark.factures[i] < 100) {
-            mark.pourboires.push(mark.factures[i]*0.2);
-
-        } else if (mark.factures[i] >= 100 && mark.factures[i] < 300) {
-            mark.pourboires.push(mark.factures[i]*0.1);
-
-        } else {
-            mark.pourboires.push(mark.factures[i]*0.25);
-
-        }
-    }
-}
-
-calcPourboireMark(mark.factures);
-console.log(mark.pourboires);
 
 
 //Qui a payé le pourboire le plus élevé en moyenne ?
